@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+    <div class="vcard" th:fragment="person">
+        <div class="vcard-content">
+            <div class="card-name" th:text="${person.name}"></div>
+            <div class="card-faculty" th:text="${person.faculty}"></div>
+            <form type="POST" action="/vcard">
+                <input type="hidden" name="name" th:value="${person.name}">
+                <input type="hidden" name="faculty" th:value="${person.faculty}">
+                <button id="generate-vcard" class="btn btn-primary" type="submit">Wygeneruj vCard</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
